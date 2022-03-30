@@ -1,17 +1,19 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>API Base: {{ apiBase }}</div>
+    <div>{{ variable1 }}</div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      variable1: process.env['VUE_APP_VARIABLE_1'],
+      apiBase: process.env['VUE_APP_BASE_API']
+    }
   }
 }
 </script>
