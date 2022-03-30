@@ -7,12 +7,14 @@
 </template>
 
 <script>
+import { getEnv } from '@/utils/index'
+
 export default {
   name: 'App',
   data() {
     return {
-      variable1: process.env['VUE_APP_VARIABLE_1'],
-      apiBase: process.env['VUE_APP_BASE_API']
+      variable1: getEnv('VUE_APP_VARIABLE_1'),
+      apiBase: getEnv('VUE_APP_BASE_API')
     }
   }
 }
